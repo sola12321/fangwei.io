@@ -18,16 +18,23 @@ const Content = styled.div`
   max-width: 1000px;
   padding: 0 1.0875rem 1rem;
   padding-top: 0;
+  min-height: 85vh;
+  position: relative;
 `
 
 const OuterLink = styled.a`
-  margin-left: 5px;
-  margin-right: 5px;
+color: #cc002b;
 `
+
 
 const Footer = styled.footer`
   display: block;
-  text-align: center;
+  position: absolute;
+  bottom: -2.5rem;
+  margin-bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 70%
 `
 
 const Layout = ({ children }) => (
@@ -47,11 +54,12 @@ const Layout = ({ children }) => (
         <Content>
           <main>{children}</main>
           <Footer>
-            Copyright © {new Date().getFullYear()} Fangwei Gao. 
-            Powered by
-            <OuterLink href="https://www.gatsbyjs.org">Gatsby</OuterLink>
-            with
-            <OuterLink href="https://github.com/niklasmtj/gatsby-theme-julia/tree/master/theme">Theme Julia</OuterLink>.
+            Copyright © {new Date().getFullYear()} Fangwei Gao. Powered by
+            {" "} <OuterLink href="https://www.gatsbyjs.org">Gatsby</OuterLink> with{" "}
+            <OuterLink href="https://github.com/niklasmtj/gatsby-theme-julia/tree/master/theme">
+              Theme Julia
+            </OuterLink>
+            .
           </Footer>
         </Content>
       </>

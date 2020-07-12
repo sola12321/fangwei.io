@@ -8,23 +8,22 @@ const Container = styled.div`
   text-align: left;
 `
 const ImageContainer = styled.div`
-  height: 200px;
-  width: 200px;
+  height: 180px;
+  width: 180px;
   display: inline-block;
   float: right;
 `
 
 const OuterContainer = styled.div`
+  min-height:80vh;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  flex-direction: row;
-  height: 78vh;
 `
 
 const Description = styled.p`
   padding: 0;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   font-size: 1.1rem;
 `
 
@@ -42,7 +41,6 @@ const ListElem = styled.li``
 
 const NameHeader = styled.h1`
   font-size: 2.5rem;
-  margin-top: 2rem;
   margin-bottom: 0;
 `
 
