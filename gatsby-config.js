@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+  pathPrefix: "/fangwei.io",
   siteMetadata: {
     title: `Fangwei Gao`,
     author: `fangweig@andrew.cmu.edu`,
