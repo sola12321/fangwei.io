@@ -80,9 +80,6 @@ const Header = ({ siteTitle }) => (
       <p>
         <HomeLink to="/">{siteTitle}</HomeLink>
         <NavLink to="/blog">Blog</NavLink>
-        <OuterLink href="https://github.com/sola12321">GitHub</OuterLink>
-        <OuterLink href="https://www.linkedin.com/in/fangwei-gao-97b25616a/">LinkedIn</OuterLink>
-        <OuterLink href="mailto:fangweig@andrew.cmu.edu">Email Me</OuterLink>
       </p>
     </Content>
   </SiteHeader>

@@ -30,8 +30,10 @@ color: #cc002b;
 const Footer = styled.footer`
   display: block;
   position: absolute;
-  bottom: -2.5rem;
+  text-align: center;
+  bottom: -50px;
   margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
   left: 50%;
   transform: translateX(-50%);
   min-width: 70%

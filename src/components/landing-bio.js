@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import styled from "@emotion/styled"
 import Img from "gatsby-image"
+import { SocialIcon } from "react-social-icons"
 
 const Container = styled.div`
   text-align: left;
@@ -13,9 +14,14 @@ const ImageContainer = styled.div`
   display: inline-block;
   float: right;
 `
+const Icon = styled.div`
+  padding: 5px;
+  margin-left: 5px;
+  display: inline-block;
+`
 
 const OuterContainer = styled.div`
-  min-height:80vh;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -44,7 +50,6 @@ const NameHeader = styled.h1`
   margin-bottom: 0;
 `
 
-
 const LandingBio = () => (
   <StaticQuery
     query={graphql`
@@ -61,7 +66,12 @@ const LandingBio = () => (
     render={data => (
       <OuterContainer>
         <Container>
-          <NameHeader>About Me</NameHeader>
+          <NameHeader>
+            About Me
+            <Icon><SocialIcon url="https://github.com/sola12321" style={{ height: 40, width: 40 }}/></Icon>
+            <Icon><SocialIcon url="https://www.linkedin.com/in/fangwei-gao-97b25616a/" style={{ height: 40, width: 40 }}/></Icon>
+            <Icon><SocialIcon url="mailto:fangweig@andrew.cmu.edu" style={{ height: 40, width: 40 }}/></Icon> 
+          </NameHeader>
           <Description>
             <ImageContainer>
               <Img fluid={data.image.childImageSharp.fluid} />
@@ -120,7 +130,8 @@ const LandingBio = () => (
             </ListElem>
             <ListElem>
               <strong>Indeed</strong> <br />
-              Software Engineer Intern in Lead Generation(LeadGen) team, May 2019 - Aug. 2019
+              Software Engineer Intern in Lead Generation(LeadGen) team, May
+              2019 - Aug. 2019
             </ListElem>
           </List>
           <NameHeader>Teaching</NameHeader>
