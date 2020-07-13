@@ -19,6 +19,9 @@ const Icon = styled.div`
   margin-left: 5px;
   display: inline-block;
 `
+const Icons = styled.div`
+  display: inline-block;
+`
 
 const OuterContainer = styled.div`
   min-height: 80vh;
@@ -29,7 +32,7 @@ const OuterContainer = styled.div`
 
 const Description = styled.p`
   padding: 0;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   font-size: 1.1rem;
 `
 
@@ -41,14 +44,22 @@ const Link = styled.a`
   }
 `
 
-const List = styled.ul``
-
-const ListElem = styled.li``
-
 const NameHeader = styled.h1`
   font-size: 2.5rem;
+  margin-right: 15px;
   margin-bottom: 0;
+  display: inline-block;
 `
+
+const FirstLine = styled.div`
+  display: flex;
+  align-items: center;
+`
+const List = styled.ul`
+  margin-bottom: 2rem;
+`
+
+const ListElem = styled.li``
 
 const LandingBio = () => (
   <StaticQuery
@@ -66,12 +77,29 @@ const LandingBio = () => (
     render={data => (
       <OuterContainer>
         <Container>
-          <NameHeader>
-            About Me
-            <Icon><SocialIcon url="https://github.com/sola12321" style={{ height: 40, width: 40 }}/></Icon>
-            <Icon><SocialIcon url="https://www.linkedin.com/in/fangwei-gao-97b25616a/" style={{ height: 40, width: 40 }}/></Icon>
-            <Icon><SocialIcon url="mailto:fangweig@andrew.cmu.edu" style={{ height: 40, width: 40 }}/></Icon> 
-          </NameHeader>
+          <FirstLine>
+            <NameHeader>About Me</NameHeader>
+            <Icons>
+              <Icon>
+                <SocialIcon
+                  url="https://github.com/sola12321"
+                  style={{ height: 40, width: 40 }}
+                />
+              </Icon>
+              <Icon>
+                <SocialIcon
+                  url="https://www.linkedin.com/in/fangwei-gao-97b25616a/"
+                  style={{ height: 40, width: 40 }}
+                />
+              </Icon>
+              <Icon>
+                <SocialIcon
+                  url="mailto:fangweig@andrew.cmu.edu"
+                  style={{ height: 40, width: 40 }}
+                />
+              </Icon>
+            </Icons>
+          </FirstLine>
           <Description>
             <ImageContainer>
               <Img fluid={data.image.childImageSharp.fluid} />

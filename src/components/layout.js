@@ -57,7 +57,7 @@ const Layout = ({ children }) => (
           <main>{children}</main>
           <Footer>
             Copyright © {new Date().getFullYear()} Fangwei Gao. Powered by
-            {" "} <OuterLink href="https://www.gatsbyjs.org">Gatsby</OuterLink> with{" "}
+            {' '} <OuterLink href="https://www.gatsbyjs.org">Gatsby</OuterLink> with{' '}
             <OuterLink href="https://github.com/niklasmtj/gatsby-theme-julia/tree/master/theme">
               Theme Julia
             </OuterLink>

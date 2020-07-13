@@ -4,6 +4,8 @@ date: "2019-03-17"
 draft: false
 path: "/blog/example-title"
 ---
+
+
 # H1
 
 ## H2
@@ -42,4 +44,6 @@ console.log(foo);
 | Foo   | Bar   |
 
 
+![image laugh](./images/laugh.png)
 
+[Download test file](./files/homework8.tex)
