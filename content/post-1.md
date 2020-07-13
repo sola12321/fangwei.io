@@ -43,6 +43,12 @@ console.log(foo);
 |-------|------ |
 | Foo   | Bar   |
 
+$ a^2 + b^2 = c^2 $
+
+$$
+\mathcal{L}(\theta, b) = \frac{1}{2n} \left[\sum_{i=1}^n \left(b + \theta^T x^{(i)} - y^{(i)} \right)^2 + \lambda \|\theta\|_2^2 \right]
+$$
+
 
 ![image laugh](./images/laugh.png)
 
