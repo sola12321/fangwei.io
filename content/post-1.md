@@ -1,8 +1,8 @@
 ---
-title: "Example Title"
-date: "2019-03-17"
+title: "Supported Format Example"
+date: "2020-07-17"
 draft: false
-path: "/blog/example-title"
+path: "/blog/format_example"
 ---
 
 
@@ -53,3 +53,4 @@ $$
 ![image laugh](./images/laugh.png)
 
 [Download test file](./files/homework8.tex)
+
