@@ -1,0 +1,134 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath,amssymb,fullpage,graphicx}
+\let\hat\widehat
+\let\tilde\widetilde
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newenvironment{proof}{{\bf Proof.}}{$\Box$}
+\DeclareMathOperator*{\argmax}{argmax}
+\DeclareMathOperator*{\argmin}{argmin}
+
+
+\newcommand\independent{\protect\mathpalette{\protect\independenT}{\perp}}
+\def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}}
+
+\newcommand{\cdist}{\overset{d}{\rightarrow}}
+\newcommand{\edist}{\overset{d}{=}}
+
+\begin{document}
+
+\begin{center}
+{\bf Homework 8}\\
+36-705\\
+Due: Tuesday November 19th by 3pm.\\
+
+\end{center}
+
+\begin{enumerate}
+\item {\bf [20 points] Constructing and interpreting confidence intervals: } Suppose that we have $X_1,\ldots,X_n \sim \text{Ber}(p)$, where $p$ is unknown. 
+\begin{itemize}
+\item Use Hoeffding's bound to construct a 95\% confidence interval for $p$.
+\item Use the CLT to construct an approximate 95\% confidence interval for $p$.
+\item Simulate the following setup: Repeat each of the following experiments 10000 times. 
+
+Vary the sample size from 10 to 10000 on a logarithmic scale, and vary $p$ from $0$ to $1$ on a linear scale. For each value of $(n,p)$ compute the coverage probability of the CLT interval and the Hoeffding interval, i.e. for each value of $(n,p)$ and for each of the 10000 experiments construct the interval and check if the true parameter is inside the constructed interval.
+
+Plot and summarize your findings. Particularly, do the two types of intervals have the advertized coverage and are they conservative?
+\end{itemize}
+
+\item {\bf [15 points] Finding and Using Pivots: } 
+\begin{itemize}
+\item Suppose that $X_1,\ldots,X_n \sim \text{Exp}(\lambda)$, then show that 
+\begin{align*}
+Q(X_1,\ldots,X_n,\lambda) = \frac{2 \sum_{i=1}^n X_i}{\lambda}
+\end{align*} 
+is a valid pivot. You can use the fact that the sum of exponentials has a Gamma distribution.
+
+Use this pivot to construct a $(1-\alpha)$-confidence interval for $\lambda$.
+
+\item A location family is a collection of shifted (mean 0) distributions, i.e. for some fixed distribution $F$ with mean 0, we define:
+\begin{align*}
+\mathcal{P}_{\theta} = \left\{ G : G(x) = F(x - \theta) \right\}.
+\end{align*}
+Show that $\overline{X} - \theta$ is always a pivot for a location family. 
+\end{itemize}
+
+\item {\bf [20 points] Multiple Testing: } We conduct a multiple testing experiment and would like to test $d$ null hypotheses $H_{01}, \ldots, H_{0d}$. 
+Throughout this question you should assume that we have access to the p-values for each hypothesis, and that these p-values satisfy the usual condition, i.e. under the null
+\begin{align*}
+P_0(\text{p-value} \leq t) \leq t,~~\text{for}~0 \leq t \leq 1.
+\end{align*}
+Our goal is to control the $k$-Family Wise Error Rate ($k$-FWER) -- which 
+is the probability of making $k$ or more false rejections (imagine $k > 1$). 
+
+In the exam you considered the following Bonferroni-type procedure:
+\begin{itemize}
+\item We reject each null for which the corresponding $\text{p-value} \leq k\alpha/d$. 
+\end{itemize}
+and showed that it controls the $k$-FWER at $\alpha$. 
+
+%{\bf Hint: } As a first step -- use Markov's inequality to relate the $k$-FWER to the expected number of false rejections.
+
+
+%\item {\bf [10 points] } 
+The analogue of Holm's procedure turns out to be the following:
+\begin{itemize}
+\item Sort the p-values so that $p_{(1)} \leq p_{(2)} \leq \ldots \leq p_{(d)}.$
+\item For the first $k$ hypotheses we use the Bonferroni threshold, i.e. if $p_{(1)} \leq  k\alpha/d$ reject and move on. Else accept all hypotheses.
+\item If $p_{(2)} \leq  k\alpha/d$ reject and move on. Else accept $H_{0(2)}, \ldots, H_{0(d)}$. \\
+\vdots
+\item If $p_{(k)} \leq  k\alpha/d$ reject and move on. Else accept $H_{0(k)}, \ldots, H_{0(d)}$.
+\item After $k$ we start increasing the threshold. If $p_{(k+1)} \leq k\alpha/(d - 1)$, reject and move on. Else accept $H_{0(k+1)}, \ldots, H_{0(d)}$.
+\item  If $p_{(k+2)} \leq k\alpha/(d - 2)$, reject and move on. Else accept $H_{0(k+2)}, \ldots, H_{0(d)}$. \\
+\vdots
+\end{itemize}
+Show that this procedure controls the k-FWER at $\alpha$. Compare this procedure to the Bonferroni controlling procedure above.
+
+
+\item {\bf [15 points] Bootstrap: } Suppose that we observe i.i.d. samples $X_1,\ldots,X_n$, and for an estimator $\widehat{\theta}(X_1,\ldots,X_n)$ we consider using the empirical bootstrap to assess its variability. 
+We have in lecture derived the mean and variance of the bootstrap distribution of $\widehat{\theta}^*$ when $\widehat{\theta}$ is the sample mean. 
+
+Suppose instead we considered a so-called ``linear statistic'', where for some fixed, bounded function $f$:
+\begin{align*}
+\widehat{\theta} = \frac{1}{n} \sum_{i=1}^n f(X_i).
+\end{align*}
+Compute the mean and variance of the bootstrap distribution of $\widehat{\theta}^*$.
+
+
+\item {\bf [15 points] Causal Inference 1: } Suppose we are in a randomized trial, i.e. we have $n$ individuals sampled from some distribution and of these $n$ individuals $n/2$, (assume $n$ is even for simplicity)
+are randomly assigned to receive treatment and the remaining $n/2$ receive control. Assume that the outcomes are binary, and for each unit denote the observed outcomes as $Y_i^{\text{obs}}$. Denote the units receiving treatment by $T$ and those receiving control by $C$.
+We want to estimate the average treatment effect:
+\begin{align*}
+\tau = \mathbb{E}[Y(1) - Y(0)], 
+\end{align*}
+and we use the natural estimator:
+\begin{align*}
+\widehat{\tau}_1 = \frac{2}{n} \sum_{i \in T} Y_i^{\text{obs}} - \frac{2}{n} \sum_{i \in C} Y_i^{\text{obs}}.
+\end{align*}
+Use Hoeffding's inequality to give a bound on $|\widehat{\tau}_1 - \tau|$ that holds with probability at least $1 - \delta$. Provide a reason as to why Hoeffding is a reasonable tool here.
+
+\item {\bf [15 points] Causal Inference 2: } Now we suppose that we are in an observational set-up, but we have no unmeasured confounding, i.e. for some covariates $X$ we have that $W \independent (Y(1),Y(0)) | X$. We assume that in this setting we observe $n$ i.i.d. samples of the form $(X_i, W_i, Y_i^{\text{obs}})$.
+
+To begin with let us suppose that the propensity scores $\mathbb{P}(W = 1 | X)$ are known, i.e. we know the probability of receiving treatment for each unit in the population. This is not an unreasonable assumption in settings where say a doctor prescribes treatment say after conducting some tests (i.e. measuring some covariates). As we noted in lecture, when $\pi(X)$ is not known we need to estimate it using regression. 
+
+
+To simplify things we will assume that there are constants $\pi_{\min} > 0$ and $\pi_{\max} < 1$ such that,
+\begin{align*}
+\pi_{\min} \leq \mathbb{P}(W = 1 | X) \leq \pi_{\max}~~~\forall~x.
+\end{align*}
+A natural estimator then is the Horvitz-Thompson/Inverse-Propensity Score estimator:
+\begin{align*}
+\widehat{\tau}_2 = \frac{1}{n}  \sum_{i=1}^n \left[\frac{Y_i^{\text{obs}} W_i}{\pi(X_i)} - \frac{Y_i^{\text{obs}} (1-W_i)}{1 - \pi(X_i)} \right].
+\end{align*}
+Use Hoeffding's inequality to give a bound on $|\widehat{\tau}_2 - \tau|$ that holds with probability at least $1 - \delta$. You need to reason about why we needed the $\pi_{\min}, \pi_{\max}$ assumption, as well as why Hoeffding is a reasonable tool here. 
+
+\end{enumerate}
+
+\end{document}
+
+
+
