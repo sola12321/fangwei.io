@@ -106,7 +106,7 @@ const LandingBio = () => (
             </ImageContainer>
             I am a master student in the{" "}
             <Link href="https://www.lti.cs.cmu.edu/">
-              Language Technology institue
+              Language Technology Institue
             </Link>
             ,{" "}
             <Link href="https://www.cs.cmu.edu/">
@@ -114,7 +114,7 @@ const LandingBio = () => (
             </Link>
             , at{" "}
             <Link href="https://www.cmu.edu/">Carnegie Mellon University</Link>.
-            My intereted areas and past experience include machine learning,
+            My interested areas and past experience include machine learning,
             distribute system and full-stack web development. <br />
             <br />
             Before starting my graduate study at CMU, I obtained my BS degree at{" "}
