@@ -134,8 +134,8 @@ const LandingBio = () => (
               Chaoqi Yang, Ruijie Wang, <strong>Fangwei Gao</strong>, Dachun
               Sun, Jiawei Tang, Tarek Abdelzaher.{" "}
               <Link href="https://arxiv.org/abs/2005.00112">
-                "Quantifying Projected Impact of Social Distancing Policies on
-                COVID-19 Outcomes in the US"
+                "Analyzing the Design Space of Re-opening Policies and COVID-19
+                Outcomes in the US"
               </Link>
               . ArXiv preprint, arXiv:2005.00112. Apr. 30 2020. <br />
               We also built an interactive web application to visualize our
