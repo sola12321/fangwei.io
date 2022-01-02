@@ -115,7 +115,7 @@ const LandingBio = () => (
             </Link>
             , at{" "}
             <Link href="https://www.cmu.edu/">Carnegie Mellon University</Link>.
-            Before starting my graduate study at CMU, I obtained my BS degree at{" "}
+            Before starting my graduate study at CMU, I obtained a bachelor degree at{" "}
             <Link href="https://illinois.edu/">
               University of Illinois at Urbana-Champaign
             </Link>
