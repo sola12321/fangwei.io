@@ -104,7 +104,8 @@ const LandingBio = () => (
             <ImageContainer>
               <Img fluid={data.image.childImageSharp.fluid} />
             </ImageContainer>
-            I am a master student in the{" "}
+            I will join Snap as a software engineer in Feb 2020, working on large-scale content recommendation for Spotlight, Stories and Feed.
+            I have a master degree in the{" "}
             <Link href="https://www.lti.cs.cmu.edu/">
               Language Technology Institue
             </Link>
@@ -114,9 +115,6 @@ const LandingBio = () => (
             </Link>
             , at{" "}
             <Link href="https://www.cmu.edu/">Carnegie Mellon University</Link>.
-            My interested areas and past experience include machine learning,
-            distribute system and full-stack web development. <br />
-            <br />
             Before starting my graduate study at CMU, I obtained my BS degree at{" "}
             <Link href="https://illinois.edu/">
               University of Illinois at Urbana-Champaign
@@ -126,7 +124,7 @@ const LandingBio = () => (
             <Link href="http://abdelzaher.cs.illinois.edu/">
               Prof. Tarek Abdelzaher
             </Link>
-            .
+            . I am particularly interested and specialized in deep learning based NLP, information retrival and recommender systems.
           </Description>
           <NameHeader>Pulications</NameHeader>
           <List>
@@ -148,6 +146,11 @@ const LandingBio = () => (
           </List>
           <NameHeader>Experience</NameHeader>
           <List>
+          <ListElem>
+              <strong>Google</strong> <br />
+              Software Engineer Intern in Google Ads, May
+              2021 - Aug. 2021
+            </ListElem>
             <ListElem>
               <strong>Cyber Physical Computing Group, UIUC</strong> <br />
               Undergraduate research assitant mainly worked on DARPA{" "}
